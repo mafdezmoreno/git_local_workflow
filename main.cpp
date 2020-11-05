@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> imprime_secuencia(){
+std::vector<int> imprime_secuencia(int &max){
 
     std::vector<int> lista;
-    for (int i = 0; i<10; i++){
+    for (int i = 0; i<max; i++){
         std::cout<< i << " ";
         lista.push_back(i);
     }
@@ -32,7 +32,11 @@ int main(){
 
     std::cout<< "\nHola mundo!\n"<<std::endl;
 
-    std::vector<int> lista = imprime_secuencia();
+    int maximo;
+    std::cout << "Escribe valor maximo de la lista: " << std::endl;
+    std::cin >> maximo;
+
+    std::vector<int> lista = imprime_secuencia(maximo);
 
     std::cout<<"El producto de la secuencia es: "
              << multiplica_secuencia(lista)<<std::endl;
