@@ -14,7 +14,7 @@ int imprime_secuencia(){
 
 int main(){
 
-    std::cout << "\nHola mundo!\n"<<std::endl;
+    std::cout << "\nOperaciones en secuencia numeros\n"<<std::endl;
 
     std::cout   << "La suma de la secuencia: " << std::endl;
     int temp = imprime_secuencia();
