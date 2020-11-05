@@ -1,24 +1,45 @@
 #include <iostream>
+#include <vector>
 
-int imprime_secuencia(){
+std::vector<int> imprime_secuencia(int &max){
 
-    int sum = 0;
-    for (int i = 0; i<10; i++){
+    std::vector<int> lista;
+    for (int i = 0; i<max; i++){
         std::cout<< i << " ";
-        sum = sum + i;
+        lista.push_back(i);
     }
     std::cout<<std::endl;
 
-    return sum;
+    return lista;
+}
+
+int multiplica_secuencia(std::vector<int> v){
+
+    int producto = 1;
+    for(auto it = std::begin(v); it != std::end(v); it++) {
+        
+        if((*it)!=0){
+            producto = producto * (*it); 
+        }else{
+            std::cout<<"(Saltado: " << *it << ") "<<std::endl;
+        }
+
+    }    
+    return producto;
 }
 
 int main(){
 
     std::cout << "\nOperaciones en secuencia numeros\n"<<std::endl;
 
-    std::cout   << "La suma de la secuencia: " << std::endl;
-    int temp = imprime_secuencia();
-    std::cout << "es: "<< temp <<std::endl;
+    int maximo;
+    std::cout << "Escribe valor maximo de la lista: " << std::endl;
+    std::cin >> maximo;
+
+    std::vector<int> lista = imprime_secuencia(maximo);
+
+    std::cout<<"El producto de la secuencia es: "
+             << multiplica_secuencia(lista)<<std::endl;
 
     std::cout << "\nprograma finalizado correctamente\n" <<std::endl;
     
